@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body{
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: 'EB Garamond', serif;
+    animation-name: sky;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 50s;
+}
+
+.moon{
+    position: relative;
+    height: 256px;
+    width: 256px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor:default;
+    padding: 40px;
+    animation-name: moon_animation;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 50s;
+}
+
+.moon::before{
+    content: "";
+    background: #c79388;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    animation-name: crecent;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 50s;
+}
+
+@keyframes crecent {
+    from{
+        transform: translate(-260px, 260px) scale(0.9);
+    }
+    50%{
+        transform: translate(0px, 0px) scale(1.02);
+        box-shadow: 0 0 10px #f9f3f2, 0 0 80px 8px #c79388;
+        background: #efdbd8;
+    }
+    to{
+        transform: translate(260px, -260px) scale(0.9);
+        box-shadow: none;
+    }
+    
+}
+
+@keyframes sky {
+    from{
+        background: rgb(23, 171, 220)
+    }
+    50%{
+        background: rgb(4, 6, 13);
+    }
+    to{
+        background: rgb(23, 171, 220);
+    }
+    
+}
+
+@keyframes moon_animation {
+    from{
+        background:rgb(23, 171, 220)
+    }
+    50%{
+        background: rgb(4, 6, 13);
+    }
+    to{
+        background: rgb(23, 171, 220);
+    }
+    
+}
